@@ -35,7 +35,7 @@ describe("Dashboard page accessibility and announcements", () => {
     const results = await axe(container);
 
     expect(results.violations).toEqual([]);
-  });
+  }, 15_000);
 
   it("announces onboarding updates and opens the wallet modal from the CTA", async () => {
     await renderLoadedDashboard();

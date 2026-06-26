@@ -152,22 +152,15 @@ describe('Property 17: Submit-attempt shows errors on all invalid fields simulta
  */
 describe('Property 16: Blur marks field as touched and triggers validation display', () => {
   it('blurring accrualRate with empty value shows error state', () => {
-    fc.assert(
-      fc.property(fc.constant(null), () => {
-        const { container, unmount } = renderModal();
-        advanceToStep2(container);
+    const { container } = renderModal();
+    advanceToStep2(container);
 
-        const accrualInput = container.querySelector('#create-stream-accrual-rate') as HTMLInputElement;
-        fireEvent.change(accrualInput, { target: { value: '' } });
-        fireEvent.blur(accrualInput);
+    const accrualInput = container.querySelector('#create-stream-accrual-rate') as HTMLInputElement;
+    fireEvent.change(accrualInput, { target: { value: '' } });
+    fireEvent.blur(accrualInput);
 
-        const accrualContainer = accrualInput.closest('.input-container');
-        expect(accrualContainer?.classList.contains('input-container--error')).toBe(true);
-
-        unmount();
-      }),
-      { numRuns: 20 }
-    );
+    const accrualContainer = accrualInput.closest('.input-container');
+    expect(accrualContainer?.classList.contains('input-container--error')).toBe(true);
   });
 
   it('blurring duration with empty value shows error state', () => {

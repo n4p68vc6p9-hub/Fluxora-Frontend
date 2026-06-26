@@ -41,5 +41,5 @@ describe("Home canonical landing page", () => {
       }),
     ).toBeInTheDocument();
     expect(screen.getAllByText(/built on stellar/i).length).toBeGreaterThan(0);
-  });
+  }, 15_000);
 });

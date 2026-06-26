@@ -170,6 +170,10 @@ The coverage gate currently enforces the configured 95% thresholds on the
 tested core component/theme baseline listed in `vitest.config.ts`. Expand that
 include list when adding reliable coverage for more production modules.
 
+The dedicated coverage workflow fails pull requests when those thresholds are
+missed and uploads the generated `coverage/` directory as the `vitest-coverage`
+artifact for review.
+
 ## Streams performance
 
 `src/components/VirtualList.tsx` keeps small stream collections simple, then

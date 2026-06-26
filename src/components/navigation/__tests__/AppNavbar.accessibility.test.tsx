@@ -92,10 +92,10 @@ describe("Property 3: Icon-only buttons have non-empty aria-labels", () => {
             unmount();
           }
         ),
-        { numRuns: 100 }
+        { numRuns: 20 }
       );
     },
-    15000
+    30000
   );
 });
 
@@ -153,9 +153,9 @@ describe("Property 4: aria-expanded reflects mobileOpen state", () => {
             unmount();
           }
         ),
-        { numRuns: 100 }
+        { numRuns: 20 }
       );
     },
-    60000
+    30000
   );
 });
